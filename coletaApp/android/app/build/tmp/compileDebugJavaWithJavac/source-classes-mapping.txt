@@ -1,0 +1,16 @@
+com/coletaapp/ReactNativeFlipper.java
+ com.coletaapp.ReactNativeFlipper
+ com.coletaapp.ReactNativeFlipper$1
+ com.coletaapp.ReactNativeFlipper$2
+ com.coletaapp.ReactNativeFlipper$2$1
+com/coletaapp/SplashActivity.java
+ com.coletaapp.SplashActivity
+com/coletaapp/MainApplication.java
+ com.coletaapp.MainApplication
+ com.coletaapp.MainApplication$1
+com/coletaapp/MainActivity.java
+ com.coletaapp.MainActivity
+com/coletaapp/BuildConfig.java
+ com.coletaapp.BuildConfig
+com/facebook/react/PackageList.java
+ com.facebook.react.PackageList
