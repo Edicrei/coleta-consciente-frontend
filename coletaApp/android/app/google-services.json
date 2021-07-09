@@ -1,0 +1,122 @@
+{
+  "project_info": {
+    "project_number": "292260052801",
+    "firebase_url": "https://twins-1510051632542.firebaseio.com",
+    "project_id": "twins-1510051632542",
+    "storage_bucket": "twins-1510051632542.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:292260052801:android:611381829ee1fad28a2bc0",
+        "android_client_info": {
+          "package_name": "com.coletaapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "292260052801-o82sf1v8ef15ajica44dptatrvfva2ij.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.coletaapp",
+            "certificate_hash": "4eaf5ec773580b22ee05c212eb02ab3cb11d3320"
+          }
+        },
+        {
+          "client_id": "292260052801-8q3gmojotmomtl8ur4pj5i469pjvtk2t.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCQz1uyXMdRLjzC9cso6m5N9BImNODgH5E"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "292260052801-8q3gmojotmomtl8ur4pj5i469pjvtk2t.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:292260052801:android:2661d7ac342fb2fa8a2bc0",
+        "android_client_info": {
+          "package_name": "com.mrmwoffdo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "292260052801-tkl2n665dpn8qnv6rq373pm5euq1mt2u.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.mrmwoffdo",
+            "certificate_hash": "20c8535c37276e5e6da8129e01e93443be617893"
+          }
+        },
+        {
+          "client_id": "292260052801-8q3gmojotmomtl8ur4pj5i469pjvtk2t.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCQz1uyXMdRLjzC9cso6m5N9BImNODgH5E"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "292260052801-8q3gmojotmomtl8ur4pj5i469pjvtk2t.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:292260052801:android:8f397c07befcefac",
+        "android_client_info": {
+          "package_name": "com.woffdo.pizzaria_mama"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "292260052801-us6r0060kgr513ttlpdc8qqdh0vc3uv1.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.woffdo.pizzaria_mama",
+            "certificate_hash": "7389fe76656ee3d362c6c7fd6991389de7cbe878"
+          }
+        },
+        {
+          "client_id": "292260052801-8q3gmojotmomtl8ur4pj5i469pjvtk2t.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCQz1uyXMdRLjzC9cso6m5N9BImNODgH5E"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "292260052801-8q3gmojotmomtl8ur4pj5i469pjvtk2t.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
