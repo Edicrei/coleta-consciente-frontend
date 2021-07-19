@@ -1,0 +1,12 @@
+Login
+	recuperar o usuario para deixar no storage o ID para enviar no cadastro de local
+
+Cadastro de Usuario
+	recuperar o usuario para deixar no storage o ID para enviar no cadastro de local
+
+Cadastro de Local
+	verificar api de logintude e latitude
+
+Home
+	Api de geocode para o directions google ou mapbox
+	
