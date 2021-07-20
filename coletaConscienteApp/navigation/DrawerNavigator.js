@@ -15,7 +15,7 @@ const DrawerNavigator = () => {
   return (
     <Drawer.Navigator
      drawerPosition='right'
-     drawerStyle={{backgroundColor: '#3AED76'}}
+     drawerStyle={{backgroundColor: '#ACDEC2'}}
      drawerContentOptions={{
       activeTintColor: '#FFFDC0',
       //inactiveBackgroundColor: "#3AED76",
