@@ -109,13 +109,6 @@ class Home extends Component {
   }
 
 
-  getLocation = async () =>{
-
-    const { navigation } = this.props;
-
-  
-    
-  }
 
 componentDidMount = async ()=>{
 
