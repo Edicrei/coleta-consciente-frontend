@@ -37,7 +37,7 @@ componentDidMount (){
 }
   onPostContact = async () =>{
 
-   // const { navigation } = this.props;
+   const { navigation } = this.props;
 
    await axios.post(`http://192.168.1.82:8082/fale-conosco`, 
   { 
@@ -52,7 +52,7 @@ componentDidMount (){
   .catch(function (error) {
     console.log(error);
   });
-    //navigation.navigate("End1")
+    navigation.navigate("End1")
   }
 
   updateTextInput = (text, field) => {
@@ -233,11 +233,12 @@ componentDidMount (){
     height: 40,
     margin: 12,
     marginTop: - 25,
-    marginLeft: 35,
+    marginLeft: 60,
     borderWidth: 1,
     borderLeftColor: "transparent",
     borderRightColor: 'transparent',
-    borderTopColor: 'transparent'
+    borderTopColor: 'transparent',
+    backgroundColor: '#ACDEC2'
   },
   Ti: {
     color: '#0E1973',

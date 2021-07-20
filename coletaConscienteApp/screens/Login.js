@@ -128,7 +128,7 @@ class Login extends Component {
 
 
 
-     await axios.post(`http://192.168.1.82:9092/oauth/token?username=${this.state.email}&password=${this.state.password}&grant_type=password`,{}, { headers, withCredentials: true }) 
+     await axios.post(`http://192.168.15.12:9092/oauth/token?username=${this.state.email}&password=${this.state.password}&grant_type=password`,{}, { headers, withCredentials: true }) 
      .then(function (response) {
        console.log(response.data.access_token);
 
@@ -333,7 +333,8 @@ class Login extends Component {
     color: '#000',
     borderLeftColor: "transparent",
     borderRightColor: 'transparent',
-    borderTopColor: 'transparent'
+    borderTopColor: 'transparent',
+    backgroundColor: '#ACDEC2'
   },
   Ti: {
     color: '#0E1973',

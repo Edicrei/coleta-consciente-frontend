@@ -170,12 +170,28 @@ class Contact extends Component {
       
     const data = response;
 
-    console.log("Latitude: ", data)
+   
+    let wholeArray = Object.keys(data).map(key => data[key]);
+
+     const  media = wholeArray[0].data[0]
+     
+    //let wholeArray1 = Object.keys(media).map(key => media[key]);
+  
+     
+    //console.log(media)
+
+     
+    /*global.administrative_area = media.administrative_area;
+    global.locality = media.locality;
+    global.region =  media.region_code;
+    global.latsposition = media.latitude;
+    global.longsposition = media.longitude;*/
+
     //console.log("longitude: ", data[0].longitude)
 
       
-      /*global.latitude = response.data[0].latitude
-      global.longitude = response.data[0].longitude*/
+      global.latitude = media.latitude
+      global.longitude = media.longitude
   
     /*console.log("global.longitude: ", global.longitude)
     console.log("global.latitude: ", global.latitude)*/
@@ -185,7 +201,7 @@ class Contact extends Component {
       console.log(error);
     });
 
-    const lat = global.latitude;
+   const lat = global.latitude;
     const long =  global.longitude;
     
   //validar token para enviar info se estiver invalido enfiar para tela de login 
@@ -219,7 +235,7 @@ class Contact extends Component {
 
 
    
-    //navigation.navigate("End")
+    navigation.navigate("End")
   }
 
   render(){
@@ -288,27 +304,27 @@ class Contact extends Component {
         />
 
         <TextInput
-          style={styles.input}
+          style={styles.input1}
           placeholder={'Complemento'}            
           onChangeText={(text) => this.updateTextInput(text, 'complement')}
           value={this.state.complement}
         />
 
       <TextInput
-                style={styles.input}
+                style={styles.input1}
                 placeholder={'Cidade'}            
                 onChangeText={(text) => this.updateTextInput(text, 'city')}
                 value={this.state.city}
               />
 
         <TextInput
-                  style={styles.input}
+                  style={styles.input1}
                   placeholder={'Estado'}            
                   onChangeText={(text) => this.updateTextInput(text, 'state')}
                   value={this.state.state}
                 />
  <TextInput
-          style={styles.input}
+          style={styles.input1}
           placeholder={'Número'}            
           onChangeText={(text) => this.updateTextInput(text, 'number')}
           value={this.state.number}
@@ -430,7 +446,7 @@ class Contact extends Component {
     fontWeight: 'bold',
     fontSize: 34, 
     alignSelf: 'center',
-   // marginTop: 150, 
+    marginTop: - 150, 
     color: '#000',
     marginLeft: 25, 
     justifyContent: 'center'
@@ -455,13 +471,27 @@ class Contact extends Component {
     width: 280,
     height: 40,
     margin: 12,
-    marginTop: - 25,
-    marginLeft: 35,
+    marginTop: - 30,
+    marginLeft: 60,
     borderWidth: 1,
     color: '#000',
     borderLeftColor: "transparent",
     borderRightColor: 'transparent',
-    borderTopColor: 'transparent'
+    borderTopColor: 'transparent',
+    backgroundColor: '#ACDEC2'
+  },
+  input1: {
+    width: 280,
+    height: 40,
+    margin: 12,
+    marginTop: - 10,
+    marginLeft: 60,
+    borderWidth: 1,
+    color: '#000',
+    borderLeftColor: "transparent",
+    borderRightColor: 'transparent',
+    borderTopColor: 'transparent',
+    backgroundColor: '#ACDEC2'
   },
   Ti: {
     color: '#0E1973',

@@ -15,15 +15,18 @@ class Home extends Component {
           longitude: global.long ,
         },
         coordinates1:{
-          latitude: -23.525365  ,
-          longitude: -46.57867,
+          latitude: global.latitude ,
+          longitude: global.longitude,
         },
         mapEl: null
       };
       
     };
 
-    
+    componentDidMount(){
+       console.log(global.lat   + ' ' +    global.long )
+   
+    }
 
 render(){
 

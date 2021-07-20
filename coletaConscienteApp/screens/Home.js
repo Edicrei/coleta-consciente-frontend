@@ -6,6 +6,7 @@ import MapView, {Marker} from 'react-native-maps';
 
 import axios from 'axios';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import { Button } from "react-native-elements/dist/buttons/Button";
 
 
 class Home extends Component {
@@ -69,7 +70,7 @@ class Home extends Component {
           this.setState({ location: position, loading: false });
           global.lat = position.coords.latitude;
           global.long =position.coords.longitude;
-          console.log(global.long)
+          
         },
         (error) => {
           this.setState({ location: error, loading: false });
@@ -78,7 +79,7 @@ class Home extends Component {
         { enableHighAccuracy: true, timeout: 15000, maximumAge: 1000, distanceFilter: 5 }
       );
     });
-  
+  console.log("longitude: " +global.long)
   }
 
   getLocationUpdates = async () => {
@@ -126,15 +127,15 @@ componentDidMount = async ()=>{
 
 
   
-  this.getLocation();
-
   
+
+  //console.log(global.token)
 
   const headers = {
     'Authorization':'Bearer ' + global.token,
    }
    const locations = [];
-   await axios.get(`http://192.168.1.82:8083/location`, {headers}) 
+   await axios.get(`http://192.168.15.12:8083/location`, {headers}) 
    .then(function (response) {
      
    const data =  response.data;
@@ -174,6 +175,7 @@ componentDidMount = async ()=>{
     locations: locations
   })
    
+ return this.getLocation();
   
 
 }
@@ -199,8 +201,8 @@ mapMarkers = () => {
                   
     
 
-                  global.lat = report.coordinates.latitude ;
-                  global.long =  report.coordinates.longitude
+                  global.latitude = report.coordinates.latitude ;
+                  global.longitude =  report.coordinates.longitude
 
               
                  navigation.navigate("Information")
@@ -234,7 +236,7 @@ render(){
         </View>
 
     <View>
-
+  
     <MapView style={styles.map}
           
           initialRegion={{
