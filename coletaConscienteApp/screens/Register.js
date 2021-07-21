@@ -157,8 +157,14 @@ class Register extends Component {
        console.log(error);
      });
    
+
+     this.setState({
+      name:'',
+      email:'',
+      password:'',
+     })
   
-    //navigation.navigate("Login")
+    navigation.navigate("Login")
   }
 
 
@@ -184,11 +190,11 @@ class Register extends Component {
            
          
          <ImageBackground source={require('../assets/bax.png')} style={styles.image}>
-          
+         <View style={{marginTop: -75}}>
           <Text style={styles.T3}>Registrar-se</Text>
 
           <View style={styles.Vinput}>
-          <Text style={styles.Ti}>Nome:</Text>
+          
 
           <TextInput
             style={styles.input}
@@ -197,7 +203,7 @@ class Register extends Component {
             value={this.state.name}
           />
 
-          <Text  style={styles.Ti2}>E-mail:</Text>
+         
 
           <TextInput
             style={styles.input}
@@ -206,8 +212,6 @@ class Register extends Component {
             value={this.state.email}
           />
 
-
-        <Text style={styles.Ti2}>Password:</Text>
 
         <TextInput
           style={styles.input}
@@ -234,6 +238,7 @@ class Register extends Component {
           color="transparent"
           onPress={() => this.onRegisterUser()}
         />
+        </View>
         </View>
          </ImageBackground>
       </View>
@@ -323,13 +328,14 @@ class Register extends Component {
     width: 280,
     height: 40,
     margin: 12,
-    marginTop: - 25,
-    marginLeft: 35,
+    marginTop: 0,
+    marginLeft: 20,
     borderWidth: 1,
     color: '#000',
     borderLeftColor: "transparent",
     borderRightColor: 'transparent',
-    borderTopColor: 'transparent'
+    borderTopColor: 'transparent',
+    backgroundColor: '#ACDEC2'
   },
   Ti: {
     color: '#0E1973',

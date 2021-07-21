@@ -143,21 +143,10 @@ class Login extends Component {
        console.log(error);
      }); 
      
-    /* console.log("Token", global.token);
-     const headersUser = {
-      'Authorization':'Bearer '+global.token,
-     }
-
-     await axios.get(`http://192.168.1.82:8080/api/user/email/${this.state.email}`,{ headersUser, withCredentials: true }) 
-     .then(function (response) {
-       console.log("Id" ,response.data.id);
-       AsyncStorage.setItem('userId', response.data.id);  
-       // navigation.navigate("Home")    
-
+     this.setState({
+      email:'',
+      password:'',
      })
-     .catch(function (error) {
-       console.log(error);
-     });*/
   }
 
 

@@ -41,14 +41,10 @@ class Contact extends Component {
 
     AsyncStorage.getItem('token').then(
       (value) =>
-        // AsyncStorage returns a promise
-        // Adding a callback to get the value
-        //setGetValue(value),
-     
+      
       
         global.token = value
       
-      // Setting the value in Text
     );
   
  
@@ -156,13 +152,12 @@ class Contact extends Component {
      checked = 'AMBOS'
     } else {
       //checked = 'AMBOS'
-      //mensagem de tem que seletionar
       Alert.alert('Selecione um Material ou ambos!!')
     }
 
     console.log("checked", checked)
   
-    //await axios.get('http://api.positionstack.com/v1/forward?access_key=3cb6aa9a7fc6bfc568800c150925d41f&query='+this.state.number + ' ' + this.state.location + ' '+ ',' + ' ' + this.state.city + ' ' + this.state.state) 
+ 
     var url = `http://api.positionstack.com/v1/forward?access_key=3cb6aa9a7fc6bfc568800c150925d41f&query=${this.state.number} ${this.state.location}, ${this.state.city} ${this.state.state}`
     console.log("URL: ", url)
     await axios.get(url) 
@@ -175,33 +170,20 @@ class Contact extends Component {
 
      const  media = wholeArray[0].data[0]
      
-    //let wholeArray1 = Object.keys(media).map(key => media[key]);
-  
-     
-    //console.log(media)
-
-     
-    /*global.administrative_area = media.administrative_area;
-    global.locality = media.locality;
-    global.region =  media.region_code;
-    global.latsposition = media.latitude;
-    global.longsposition = media.longitude;*/
-
-    //console.log("longitude: ", data[0].longitude)
+   
 
       
       global.latitude = media.latitude
       global.longitude = media.longitude
   
-    /*console.log("global.longitude: ", global.longitude)
-    console.log("global.latitude: ", global.latitude)*/
+
  
     })
     .catch(function (error) {
       console.log(error);
     });
 
-   const lat = global.latitude;
+    const lat = global.latitude;
     const long =  global.longitude;
     
   //validar token para enviar info se estiver invalido enfiar para tela de login 
@@ -231,9 +213,22 @@ class Contact extends Component {
   })
   .catch(function (error) {
     console.log(error);
+    Alert.alert('Faça o login novamente!')
+
+    navigation.navigate("Login")
   });
 
-
+  this.setState({
+        name:'',  
+        material:'',
+        number: '',
+        complement: '',
+        city: '',
+        state: '',
+        location: '',
+        coordinate: '',
+        isChecked: ''
+   })
    
     navigation.navigate("End")
   }
@@ -266,34 +261,16 @@ class Contact extends Component {
           <Text style={styles.T4}>Preencha o formulário abaixo e cadastre um local.</Text>
 
           <View style={styles.Vinput}>
-          <Text style={styles.Ti}>Nome:</Text>
+          
 
           <TextInput
             style={styles.input}
             placeholder={'Nome'}            
             onChangeText={(text) => this.updateTextInput(text, 'name')}
             value={this.state.name}
-          />
+          />        
 
-          <Text  style={styles.Ti2}>E-mail:</Text>
-
-          <TextInput
-            style={styles.input}
-            placeholder={'E-mail'}            
-            onChangeText={(text) => this.updateTextInput(text, 'email')}
-            value={this.state.email}
-          />
-
-
-        <Text style={styles.Ti2}>Telefone:</Text>
-
-        <TextInput
-          style={styles.input}
-          placeholder={'Telefone'}            
-          onChangeText={(text) => this.updateTextInput(text, 'phone')}
-          value={this.state.phone}
-        />
-
+    
         <Text style={styles.Ti}>Local:</Text>
 
         <TextInput
@@ -462,7 +439,7 @@ class Contact extends Component {
    button:{
    alignSelf: 'center', 
    //marginLeft: 25,
-   marginTop: 0,
+   marginTop: 30,
    borderRadius: 20,
    width: 160,
    backgroundColor:"#742699"
@@ -471,8 +448,8 @@ class Contact extends Component {
     width: 280,
     height: 40,
     margin: 12,
-    marginTop: - 30,
-    marginLeft: 60,
+    marginTop: - 20,
+    marginLeft: 20,
     borderWidth: 1,
     color: '#000',
     borderLeftColor: "transparent",
@@ -484,8 +461,8 @@ class Contact extends Component {
     width: 280,
     height: 40,
     margin: 12,
-    marginTop: - 10,
-    marginLeft: 60,
+    marginTop: 0,
+    marginLeft: 20,
     borderWidth: 1,
     color: '#000',
     borderLeftColor: "transparent",
@@ -498,7 +475,7 @@ class Contact extends Component {
     alignSelf: 'flex-start', 
     fontSize: 16, 
     fontWeight: 'bold', 
-    marginLeft: - 30 
+    marginLeft: 60
   },
   Vinput: {
     marginTop: 40, 

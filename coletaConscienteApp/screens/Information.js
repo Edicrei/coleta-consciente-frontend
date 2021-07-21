@@ -24,7 +24,7 @@ class Home extends Component {
     };
 
     componentDidMount(){
-       console.log(global.lat   + ' ' +    global.long )
+       console.log(global.lat   + ' ' + global.latitude + ' ' +   global.long  + ' ' + global.longitude)
    
     }
 
@@ -97,7 +97,7 @@ render(){
       <MapViewDirections
           origin={this.state.coordinates}
           destination={this.state.coordinates1}
-          apikey={"AIzaSyBK6iLYuIRCxJY2dXHISyA4yXQw9WrC5wo"}
+          apikey={"AIzaSyD2CG_PR-FONFVNH9vX0qkOXZmiRwDG9DI"}
           strokeWidth={3}
           onReady={result=>{
             console.log(result)
