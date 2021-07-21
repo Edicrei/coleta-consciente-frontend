@@ -39,7 +39,7 @@ componentDidMount (){
 
    const { navigation } = this.props;
 
-   await axios.post(`http://192.168.1.82:8082/fale-conosco`, 
+   await axios.post(`http://134.209.115.59:60343/fale-conosco`, 
   { 
     "name": this.state.name, 
     "phone": this.state.phone,

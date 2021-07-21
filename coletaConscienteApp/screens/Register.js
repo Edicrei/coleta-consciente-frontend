@@ -148,7 +148,7 @@ class Register extends Component {
 
   
 
-     await axios.post(`http://192.168.15.12:8080/api/user`, 
+     await axios.post(`http://134.209.115.59:25647/api/user`, 
      { "name": this.state.name, "email": this.state.email, "password": this.state.password }) 
      .then(function (response) {
        console.log(response);

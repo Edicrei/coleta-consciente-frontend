@@ -135,34 +135,24 @@ componentDidMount = async ()=>{
     'Authorization':'Bearer ' + global.token,
    }
    const locations = [];
-   await axios.get(`http://192.168.15.12:8083/location`, {headers}) 
+   await axios.get(`http://134.209.115.59:38708/location`, {headers}) 
    .then(function (response) {
-     
+   
+   console.log("response data", response.data)
+    
    const data =  response.data;
-
-   console.log(response.data)
     
    let wholeArray = Object.keys(data).map(key => data[key]);
-
-      
+     
    const  media = wholeArray;
+   console.log("Array de location", media)
 
    for (var {id: n, address: p/*, longitude: q*/} of media) {
       
 
-  
-   
-    locations.push(p)
-
-
-   
- 
-   
+   locations.push(p)
     
-  }
-
-
- 
+  } 
 
    })
    .catch(function (error) {
