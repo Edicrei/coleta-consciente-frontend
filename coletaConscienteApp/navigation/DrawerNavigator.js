@@ -8,6 +8,7 @@ import TabNavigator from "./TabNavigator.js";
 
 import Login from '../screens/Login';
 import Register from '../screens/Register';
+import Home from "../screens/Home";
 
 const Drawer = createDrawerNavigator();
 
