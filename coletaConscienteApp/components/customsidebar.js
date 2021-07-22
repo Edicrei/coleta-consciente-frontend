@@ -18,7 +18,7 @@ import {
   DrawerItem,
 } from '@react-navigation/drawer';
 
-
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 class customsidebar extends Component {
 
@@ -87,8 +87,20 @@ class customsidebar extends Component {
                 :
 
                 null  }
-                </View>
+                      <TouchableOpacity
+                style={styles.button}
+                 onPress={() => {  
+
+                  AsyncStorage.setItem('token', '');
+                  navigation.navigate("Login")
+                  }}
+                >
+                <Text style={styles.text}>Logout</Text>
+                </TouchableOpacity>
                
+                </View>
+
+          
             </SafeAreaView>
         )
 
