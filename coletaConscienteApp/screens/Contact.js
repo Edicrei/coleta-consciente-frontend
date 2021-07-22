@@ -271,7 +271,6 @@ class Contact extends Component {
           />        
 
     
-        <Text style={styles.Ti}>Local:</Text>
 
         <TextInput
           style={styles.input}
@@ -355,7 +354,7 @@ class Contact extends Component {
         <View  style={styles.button}>
         <Button
           title="Enviar"
-          color="transparent"
+          color="#742699"
           onPress={() => this.onPostLocation()}
         />
         </View>
@@ -421,16 +420,16 @@ class Contact extends Component {
    },
    T3:{
     fontWeight: 'bold',
-    fontSize: 34, 
+    fontSize: 28, 
     alignSelf: 'center',
-    marginTop: - 150, 
+    marginTop: 100, 
     color: '#000',
     marginLeft: 25, 
     justifyContent: 'center'
    },
    T4:{
     fontWeight: 'normal',
-    fontSize: 18, 
+    fontSize: 16, 
     marginTop: 30, 
     color: '#000', 
     alignSelf: "center",
@@ -439,16 +438,16 @@ class Contact extends Component {
    button:{
    alignSelf: 'center', 
    //marginLeft: 25,
-   marginTop: 30,
-   borderRadius: 20,
-   width: 160,
+   marginTop: - 30,
+   borderRadius: 45,
+   width: 180,
    backgroundColor:"#742699"
    },
    input: {
     width: 280,
     height: 40,
     margin: 12,
-    marginTop: - 20,
+    marginTop: 0,
     marginLeft: 20,
     borderWidth: 1,
 
@@ -479,7 +478,7 @@ class Contact extends Component {
     marginLeft: 60
   },
   Vinput: {
-    marginTop: 40, 
+    marginTop: - 30, 
     alignSelf: "center",
     paddingRight: '10%',
     paddingLeft: '10%',
@@ -518,7 +517,7 @@ class Contact extends Component {
        },
    
     vregister: {
-      marginTop: -25,
+      marginTop: - 75,
       paddingRight: '10%',
       paddingLeft: '10%',
       paddingTop: '10%',

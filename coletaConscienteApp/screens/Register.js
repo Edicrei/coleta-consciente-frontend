@@ -242,7 +242,7 @@ class Register extends Component {
         <View  style={styles.button}>
         <Button
           title="Registrar"
-          color="transparent"
+          color="#742699"
           onPress={() => this.onRegisterUser()}
         />
         </View>
@@ -327,8 +327,8 @@ class Register extends Component {
    alignSelf: 'center', 
    marginLeft: 25,
    marginTop: 50,
-   borderRadius: 20,
-   width: 160,
+   borderRadius: 45,
+   width: 180,
    backgroundColor:"#742699"
    },
    input: {

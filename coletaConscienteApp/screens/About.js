@@ -148,7 +148,7 @@ componentDidMount (){
         <View  style={styles.button}>
         <Button
           title="Enviar"
-          color="transparent"
+          color="#742699"
           onPress={() => this.onPostContact()}
         />
         </View>
@@ -233,8 +233,8 @@ componentDidMount (){
      alignSelf: 'center', 
      //marginLeft: 25,
      marginTop: 30,
-     borderRadius: 20,
-     width: 160,
+     borderRadius: 45,
+     width: 180,
      backgroundColor:"#742699"
      },
      input: {
@@ -244,7 +244,7 @@ componentDidMount (){
       marginTop: 0,
       marginLeft: 20,
       borderWidth: 1,
-      color: '#000',
+      color: '#fff',
       borderLeftColor: "transparent",
       borderRightColor: 'transparent',
       borderTopColor: 'transparent',
