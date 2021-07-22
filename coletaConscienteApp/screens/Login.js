@@ -134,19 +134,24 @@ class Login extends Component {
 
       let token = response.data.access_token;
       global.token = token; 
+      global.update = 'pp'
        AsyncStorage.setItem('token', token);
        //console.log(token)
-       navigation.navigate("Home")    
+       
 
      })
      .catch(function (error) {
        console.log(error);
      }); 
-     
+
      this.setState({
       email:'',
       password:'',
      })
+
+     if(global.token != ''){
+      navigation.navigate("Home")  
+     }
   }
 
 

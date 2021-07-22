@@ -1,5 +1,5 @@
 import React, {Component }from "react";
-import {View,Platform,Image,StyleSheet, TouchableOpacity,  PermissionsAndroid, Dimensions} from "react-native";
+import {View,Platform,Image,StyleSheet, TouchableOpacity,  PermissionsAndroid, Dimensions,} from "react-native";
 import Geolocation from 'react-native-geolocation-service';
 import MapView, {Marker} from 'react-native-maps';
 
@@ -109,27 +109,11 @@ class Home extends Component {
       }
   }
 
-
-
-componentDidMount = async ()=>{
-
-  this.hasLocationPermission();
-
- 
- 
-  AsyncStorage.getItem('token').then(
-    (value) =>
-   
+getpoint = async () =>{
     
-      global.token = value,
-
-  );
-
-
-  
   
 
-  console.log(global.token)
+  //console.log(global.token)
 
   const headers = {
     'Authorization':'Bearer ' + global.token,
@@ -138,7 +122,7 @@ componentDidMount = async ()=>{
    await axios.get(`http://134.209.115.59:38708/location`, {headers}) 
    .then(function (response) {
      
-   const data =  response.data;
+   const data =  response.data.name;
 
    
     
@@ -146,7 +130,7 @@ componentDidMount = async ()=>{
 
       
    const  media = wholeArray;
-  
+  console.log(media)
    for (var {id: n, address: p/*, longitude: q*/} of media) {
       
 
@@ -161,12 +145,13 @@ componentDidMount = async ()=>{
     
   }
 
-
+   return global.accesstoken =  0
  
 
    })
    .catch(function (error) {
-     console.log(error);
+     //console.log("erro: " + error);
+     return global.accesstoken =  1
    });
  
  
@@ -175,14 +160,21 @@ componentDidMount = async ()=>{
     locations: locations
   })
 
-  console.log(this.state.locations)
-   
- this.getLocation();
+  //console.log(this.state.locations)
+}
+
+componentDidMount = async ()=>{
+
+  await this.hasLocationPermission();
+  await  this.getpoint();
+  await this.getLocation();
   
 
 }
 
-
+componentDidUpdate (){
+  this.getpoint();
+}
 mapMarkers = () => {
 
   const { navigation } = this.props;
@@ -204,8 +196,10 @@ mapMarkers = () => {
     
 
                   global.latitude = report.coordinates.latitude ;
-                  global.longitude =  report.coordinates.longitude
-
+                  global.longitude =  report.coordinates.longitude;
+                  global.location1 = report.location;
+                  global.street = 'Rua: ' + report.street +  ' Nº'  + ' ' +  report.number;
+                  global.complement = report.complement
               
                  navigation.navigate("Information")
                 }}

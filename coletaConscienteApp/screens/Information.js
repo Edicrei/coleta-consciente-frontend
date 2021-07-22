@@ -1,8 +1,9 @@
 import React, { Component } from "react";
 import { View,Button, Image, Text, StyleSheet, TouchableOpacity, Alert, Dimensions} from "react-native";
 import MapView, {Marker} from 'react-native-maps';
-import MapViewDirections from 'react-native-maps-directions';
+//import MapViewDirections from 'react-native-maps-directions';
 
+const apigoogle = "AIzaSyD2CG_PR-FONFVNH9vX0qkOXZmiRwDG9DI" ;
 
 class Home extends Component {
 
@@ -61,77 +62,53 @@ render(){
     
         
         <Text style={styles.T3}>Local: </Text>
-        <Text style={styles.T4}>Santuário São Judas</Text>
+       {/* <Text style={styles.T4}>global.location1 </Text>*/}
 
 
-        <Text style={styles.T5}>O Local Santuário São Judas realiza a</Text>
-        <Text style={styles.T5}>coleta de pilhas, baterias e componentes</Text>
-        <Text style={styles.T5}>e peças de celular.</Text>
+        <Text style={styles.T5}>global.street</Text>
+      
 
       
-        <Text style={styles.T6}>Fica localizado próximo ao metrô</Text>
+        <Text style={styles.T6}>global.complement</Text>
 
-        <View style={styles.VSocial}>
+       {/* <View style={styles.VSocial}>
         <Image style={styles.socialIcon} source={require('../assets/pilha.png')}/> 
         <Image style={styles.socialIcon} source={require('../assets/bateria.png')}/> 
         <Image  style={styles.socialIcon} source={require('../assets/celular.png')}/> 
-        </View>
+  </View>*/}
 
   <View style={styles.container}>
-          <MapView style={styles.map}
+     <MapView style={styles.map}
           
           initialRegion={{
-            latitude: -23.0250726 ,
-            longitude:  -46.8503374,
+            latitude:global.latitude ,
+            longitude: global.longitude,
             latitudeDelta: 0.000922,
             longitudeDelta: 0.000421,
-            
           }}
           
-          showsUserLocation={true}
-          zoomEnabled={false}
-          loadingEnabled={true}
-          ref={this.state.mapEl}
-          />
-
-      <MapViewDirections
-          origin={this.state.coordinates}
-          destination={this.state.coordinates1}
-          apikey={"AIzaSyD2CG_PR-FONFVNH9vX0qkOXZmiRwDG9DI"}
-          strokeWidth={3}
-          onReady={result=>{
-            console.log(result)
-          setDistance(result.distance);
-         mapEl.current.fitToCoordinates(
-             result.coordinates,{
-                 edgePadding:{
-                     top:50,
-                     bottom:50,
-                     left:50,
-                     right:50
-                 }
-             }
-         );
-        }
-      }
-        />
-
-
-
-         <Marker
-            draggable
-            coordinate={{
-              latitude:-23.6271568,
-              longitude: -46.645314,
-            }}
-            
-            onDragEnd={
-              (e) => alert(JSON.stringify(e.nativeEvent.coordinate))
-            }
-            title={'Test Marker'}
-            description={'This is a description of the marker'}
-          />
-
+          
+          >
+              <Marker
+              //key={report.id}
+                draggable
+                coordinate={{ 
+                              latitude:  global.latitude, 
+                              longitude: global.longitude
+                            }}
+                onDragEnd={
+                  (e) => alert(JSON.stringify(e.nativeEvent.coordinate))
+                }
+           
+                image={require('../assets/location.png')}
+                //title={ report.complement }
+               // description={'Rua: ' + report.street +  ' Nº'  + ' ' +  report.number}
+                style={{backgroundColor: 'red'}}
+               // title={report.location}
+               // description={report.comments}
+              >
+              </Marker >
+        </MapView> 
           </View>
 
      
