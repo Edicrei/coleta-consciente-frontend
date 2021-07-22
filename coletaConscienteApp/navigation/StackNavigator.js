@@ -11,6 +11,8 @@ import End1 from "../screens/EndScene1";
 import Login from "../screens/Login";
 import Register from "../screens/Register";
 
+import RegisterPoints from "../screens/About";
+
 const Stack = createStackNavigator();
 const MyTransition = {
   gestureDirection: 'horizontal',
@@ -154,7 +156,28 @@ const MainStackNavigator = () => {
           
           />
   
-      
+          <Stack.Screen 
+          name="RegisterPoints" 
+          component={RegisterPoints} 
+          options={{
+            headerLeft:()=>{
+              return null;
+            },
+            headerTitle: () =>{
+              return null
+            },
+            header:()=>{
+              return null
+            },
+
+            gestureEnabled: ()=> true,
+            transitionConfig: ()=> fromRight(500),
+            ...MyTransition,
+
+          }}
+          
+          />
+  
     </Stack.Navigator>
   );
 };

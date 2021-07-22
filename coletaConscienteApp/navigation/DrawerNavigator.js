@@ -9,6 +9,8 @@ import TabNavigator from "./TabNavigator.js";
 import Login from '../screens/Login';
 import Register from '../screens/Register';
 import Home from "../screens/Home";
+// Import Custom Sidebar
+import CustomSidebarMenu from '../components/customsidebar';
 
 const Drawer = createDrawerNavigator();
 
@@ -22,15 +24,18 @@ const DrawerNavigator = () => {
       //inactiveBackgroundColor: "#3AED76",
       itemStyle: { marginVertical: 30 },
     }}
-    
+    drawerContent={(props) => <CustomSidebarMenu {...props} />}
     
     >
       <Drawer.Screen 
          name="Mapa" component={TabNavigator} />
       <Drawer.Screen name="Cadastro" component={ContactStackNavigator} />
       <Drawer.Screen name="Fale Conosco" component={RegisterStackNavigator} />
-      <Drawer.Screen name="Login" component={Login} />
-      <Drawer.Screen name="Register" component={Register} />
+     
+          <Drawer.Screen name="Login" component={Login} />
+          <Drawer.Screen name="Register" component={Register} />
+    
+    
     </Drawer.Navigator>
   );
 };
