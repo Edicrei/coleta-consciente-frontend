@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { ImageBackground, View,Button, Image, Text, StyleSheet, TouchableOpacity, TextInput, Platform, PermissionsAndroid} from "react-native";
+import { ImageBackground, View,Button, Image, Text, StyleSheet, TouchableOpacity, TextInput, Platform, PermissionsAndroid, Alert} from "react-native";
 import Geolocation from 'react-native-geolocation-service';
 import axios from 'axios';
 
@@ -141,6 +141,7 @@ class Login extends Component {
 
      })
      .catch(function (error) {
+      Alert.alert('Email ou senha inválidos!')
        console.log(error);
      }); 
 
@@ -183,7 +184,7 @@ class Login extends Component {
            
          
          <ImageBackground source={require('../assets/bax.png')} style={styles.image}>
-          
+         <View style={styles.Vftalks}>
           <Text style={styles.T3}>Login</Text>
 
          
@@ -191,7 +192,7 @@ class Login extends Component {
           <View style={styles.Vinput}>
         
 
-          <Text  style={styles.Ti2}>E-mail:</Text>
+        
 
           <TextInput
             style={styles.input}
@@ -201,7 +202,7 @@ class Login extends Component {
           />
 
 
-        <Text style={styles.Ti2}>Senha:</Text>
+     
 
         <TextInput
           style={styles.input}
@@ -233,6 +234,8 @@ class Login extends Component {
           onPress={() => this.onLogin()}
         />
         </View>
+        </View>
+
          </ImageBackground>
       </View>
     );
@@ -311,7 +314,7 @@ class Login extends Component {
    },
    button:{
    alignSelf: 'center', 
-   //marginLeft: 25,
+   marginLeft: 25,
    marginTop: 50,
    borderRadius: 20,
    width: 160,
@@ -321,14 +324,14 @@ class Login extends Component {
     width: 280,
     height: 40,
     margin: 12,
-    marginTop: - 25,
-    marginLeft: 35,
+    marginTop: 0,
+    marginLeft: 20,
     borderWidth: 1,
-    color: '#000',
+    color: '#fff',
     borderLeftColor: "transparent",
     borderRightColor: 'transparent',
     borderTopColor: 'transparent',
-    backgroundColor: '#ACDEC2'
+    backgroundColor: '#0e1973'
   },
   Ti: {
     color: '#0E1973',
@@ -370,7 +373,16 @@ class Login extends Component {
      },
      VCheckD: {
        height: 10,
-       }
+       },
+
+       Vftalks:{
+        marginTop: - 30, 
+        paddingRight: '10%',
+        paddingLeft: '10%',
+        paddingTop: '10%',
+        paddingBottom: '10%'
+      }
+    
    
     
   });

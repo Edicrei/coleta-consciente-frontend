@@ -255,7 +255,7 @@ class Contact extends Component {
            
          
          <ImageBackground source={require('../assets/bax.png')} style={styles.image}>
-          <View style={{marginTop: -75}}>
+          <View style={styles.vregister}>
           <Text style={styles.T3}>Cadastre um Local</Text>
 
           <Text style={styles.T4}>Preencha o formulário abaixo e cadastre um local.</Text>
@@ -451,11 +451,12 @@ class Contact extends Component {
     marginTop: - 20,
     marginLeft: 20,
     borderWidth: 1,
-    color: '#000',
+
+    color: '#fff',
     borderLeftColor: "transparent",
     borderRightColor: 'transparent',
     borderTopColor: 'transparent',
-    backgroundColor: '#ACDEC2'
+    backgroundColor: '#0e1973'
   },
   input1: {
     width: 280,
@@ -464,11 +465,11 @@ class Contact extends Component {
     marginTop: 0,
     marginLeft: 20,
     borderWidth: 1,
-    color: '#000',
+    color: '#fff',
     borderLeftColor: "transparent",
     borderRightColor: 'transparent',
     borderTopColor: 'transparent',
-    backgroundColor: '#ACDEC2'
+    backgroundColor: '#0e1973'
   },
   Ti: {
     color: '#0E1973',
@@ -479,7 +480,11 @@ class Contact extends Component {
   },
   Vinput: {
     marginTop: 40, 
-    alignSelf: "center"
+    alignSelf: "center",
+    paddingRight: '10%',
+    paddingLeft: '10%',
+    paddingTop: '10%',
+    paddingBottom: '10%'
   },
   Ti3: {
     color: '#0E1973',
@@ -510,9 +515,17 @@ class Contact extends Component {
      },
      VCheckD: {
        height: 10,
-       }
+       },
    
+    vregister: {
+      marginTop: -25,
+      paddingRight: '10%',
+      paddingLeft: '10%',
+      paddingTop: '10%',
+      paddingBottom: '10%'
     
+    }
+
   });
 
 export default Contact;
