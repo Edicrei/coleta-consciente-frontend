@@ -47,7 +47,7 @@ class customsidebar extends Component {
                 style={styles.button}
                  onPress={() => {                  
 
-                    navigation.navigate("RegisterPoints")
+                    navigation.navigate("Contact")
                     }}>
                 <Text style={styles.text}>Cadastrar Pontos</Text>
                     </TouchableOpacity>
@@ -56,7 +56,7 @@ class customsidebar extends Component {
                 style={styles.button}
                  onPress={() => {                  
 
-                  navigation.navigate("Contact")
+                  navigation.navigate("About")
                   }}>
                     <Text style={styles.text}>Fale Conosco</Text>
                 </TouchableOpacity>
@@ -87,6 +87,9 @@ class customsidebar extends Component {
                 :
 
                 null  }
+                {global.accesstoken == 0  ?
+                
+                <View>
                       <TouchableOpacity
                 style={styles.button}
                  onPress={() => {  
@@ -97,7 +100,10 @@ class customsidebar extends Component {
                 >
                 <Text style={styles.text}>Logout</Text>
                 </TouchableOpacity>
-               
+               </View>
+               :
+               null
+               }
                 </View>
 
           
