@@ -77,14 +77,14 @@ render(){
         <Image  style={styles.socialIcon} source={require('../assets/celular.png')}/> 
   </View>*/}
 
-  <View style={styles.container}>
+ 
      <MapView style={styles.map}
           
           initialRegion={{
             latitude:global.latitude ,
             longitude: global.longitude,
-            latitudeDelta: 0.000922,
-            longitudeDelta: 0.000421,
+            latitudeDelta: 0.00922,
+            longitudeDelta: 0.00421,
           }}
           
           
@@ -109,13 +109,13 @@ render(){
               >
               </Marker >
         </MapView> 
-          </View>
+    
 
      
       {/*<Image style={styles.Cimage} source={require('../assets/map.png')}/>*/}
        
 
-        <Text style={styles.T7}>Cadastrado em: {""}</Text>
+     {/*   <Text style={styles.T7}>Cadastrado em: {""}</Text>*/}
   
     </View>
   );
@@ -133,7 +133,8 @@ const styles = StyleSheet.create({
   },
   map: {
     width: Dimensions.get('window').width / 2 + 200,
-    height: Dimensions.get('window').height / 3,
+    height: Dimensions.get('window').height,
+    marginTop: 25
 
   },
  Vlogo: {
