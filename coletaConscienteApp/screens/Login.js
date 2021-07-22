@@ -185,7 +185,7 @@ class Login extends Component {
          
          <ImageBackground source={require('../assets/bax.png')} style={styles.image}>
          <View style={styles.Vftalks}>
-          <Text style={styles.T3}>Login</Text>
+          <Text style={styles.T3}>Coleta  <Text style={styles.T5}>Consciente</Text></Text>
 
          
 
@@ -221,7 +221,7 @@ class Login extends Component {
                 style={styles.T4}
                 onPress={() => this.onRegister()}
             >
-                <Text>Não possui Login ? Faça o cadastro</Text>
+                <Text>Não possui Login ? <Text style={styles.T5}>Faça o cadastro</Text></Text>
             </TouchableOpacity>
         
         
@@ -300,7 +300,7 @@ class Login extends Component {
     fontSize: 34, 
     alignSelf: 'center',
    // marginTop: 150, 
-    color: '#000',
+    color: '#0E1973',
     marginLeft: 25, 
     justifyContent: 'center'
    },
@@ -376,14 +376,16 @@ class Login extends Component {
        },
 
        Vftalks:{
-        marginTop: - 30, 
+        marginTop: - 100, 
         paddingRight: '10%',
         paddingLeft: '10%',
         paddingTop: '10%',
         paddingBottom: '10%'
-      }
+      },
     
-   
+   T5:{
+    color: '#1DA64B',
+   }
     
   });
 

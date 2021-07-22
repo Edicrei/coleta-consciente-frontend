@@ -191,7 +191,7 @@ class Register extends Component {
          
          <ImageBackground source={require('../assets/bax.png')} style={styles.image}>
          <View style={styles.Vregister}>
-          <Text style={styles.T3}>Registrar-se</Text>
+          <Text style={styles.T3}>Conecte<Text style={styles.T5}>-se</Text></Text>
 
           <View style={styles.Vinput}>
           
@@ -231,7 +231,7 @@ class Register extends Component {
                 style={styles.T4}
                 onPress={() =>    navigation.navigate("Login")}
             >
-                <Text>Possui Login ? Entre</Text>
+                <Text>Possui Login ? <Text style={styles.T5}>Login</Text></Text>
             </TouchableOpacity>
         
         
@@ -311,7 +311,7 @@ class Register extends Component {
     fontSize: 34, 
     alignSelf: 'center',
    // marginTop: 150, 
-    color: '#000',
+    color: '#0E1973',
     marginLeft: 25, 
     justifyContent: 'center'
    },
@@ -391,6 +391,9 @@ class Register extends Component {
     paddingLeft: '10%',
     paddingTop: '10%',
     paddingBottom: '10%'
+   },
+   T5:{
+    color: '#1DA64B',
    }
     
   });

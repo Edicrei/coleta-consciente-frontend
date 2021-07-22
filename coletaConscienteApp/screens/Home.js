@@ -139,7 +139,7 @@ getpoint = async () =>{
 
       
    const  media = wholeArray;
-   // console.log(media.name)
+ 
    for (var {id: n, address: p/*, longitude: q*/} of media) {
       
 
@@ -147,7 +147,7 @@ getpoint = async () =>{
    
     locations.push(p)
 
-   console.log(n,p)
+ 
    
  
    
@@ -182,7 +182,7 @@ componentDidMount = async ()=>{
 }
 
 componentDidUpdate (){
- // this.getpoint();
+  this.getpoint();
 }
 mapMarkers = () => {
 
@@ -190,7 +190,7 @@ mapMarkers = () => {
   
   return this.state.locations.map((report) => 
   <Marker
-               key={report.id}
+              // key={report.id}
                 draggable
                 coordinate={{ 
                               latitude:  report.coordinates.latitude, 

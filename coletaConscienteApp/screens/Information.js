@@ -25,7 +25,7 @@ class Home extends Component {
     };
 
     componentDidMount(){
-       console.log(global.lat   + ' ' + global.latitude + ' ' +   global.long  + ' ' + global.longitude)
+      // console.log(global.lat   + ' ' + global.latitude + ' ' +   global.long  + ' ' + global.longitude)
    
     }
 

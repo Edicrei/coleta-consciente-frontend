@@ -423,7 +423,7 @@ class Contact extends Component {
     fontSize: 28, 
     alignSelf: 'center',
     marginTop: 100, 
-    color: '#000',
+    color: '#1DA64B',
     marginLeft: 25, 
     justifyContent: 'center'
    },

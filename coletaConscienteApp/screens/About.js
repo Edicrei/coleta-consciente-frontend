@@ -217,7 +217,7 @@ componentDidMount (){
       fontSize: 34, 
       alignSelf: 'center',
       marginTop: - 150, 
-      color: '#000',
+      color: '#1DA64B',
       marginLeft: 25, 
       justifyContent: 'center'
      },
