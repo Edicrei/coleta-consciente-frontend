@@ -1,5 +1,5 @@
 import React, {Component }from "react";
-import {View,Platform,Image,StyleSheet, TouchableOpacity,  PermissionsAndroid, Dimensions,} from "react-native";
+import {View,Platform,Image,StyleSheet, TouchableOpacity,  PermissionsAndroid, Dimensions,Text} from "react-native";
 import Geolocation from 'react-native-geolocation-service';
 import MapView, {Marker} from 'react-native-maps';
 
@@ -79,7 +79,7 @@ class Home extends Component {
         { enableHighAccuracy: true, timeout: 15000, maximumAge: 1000, distanceFilter: 5 }
       );
     });
-  console.log("longitude: " +global.long)
+  //console.log("longitude: " +global.long)
   }
 
   getLocationUpdates = async () => {
@@ -133,13 +133,13 @@ getpoint = async () =>{
      
    const data =  response.data;
 
-   
+
     
    let wholeArray = Object.keys(data).map(key => data[key]);
 
       
    const  media = wholeArray;
-  //console.log(media)
+   // console.log(media.name)
    for (var {id: n, address: p/*, longitude: q*/} of media) {
       
 
@@ -147,7 +147,7 @@ getpoint = async () =>{
    
     locations.push(p)
 
-
+   console.log(n,p)
    
  
    
@@ -169,7 +169,7 @@ getpoint = async () =>{
     locations: locations
   })
 
-  //console.log(this.state.locations)
+  //console.log(this.state.locations.coordinates.longitude)
 }
 
 componentDidMount = async ()=>{
@@ -182,7 +182,7 @@ componentDidMount = async ()=>{
 }
 
 componentDidUpdate (){
-  this.getpoint();
+ // this.getpoint();
 }
 mapMarkers = () => {
 
@@ -190,7 +190,7 @@ mapMarkers = () => {
   
   return this.state.locations.map((report) => 
   <Marker
-    //key={report.id}
+               key={report.id}
                 draggable
                 coordinate={{ 
                               latitude:  report.coordinates.latitude, 
@@ -209,6 +209,8 @@ mapMarkers = () => {
                   global.location1 = report.location;
                   global.street = report.street +  ' Nº'  + ' ' +  report.number;
                   global.complement = report.complement
+
+                 
               
                  navigation.navigate("Information")
                 }}
@@ -219,6 +221,9 @@ mapMarkers = () => {
                 title={report.location}
                 description={report.comments}
               >
+
+                
+            
               </Marker >)
 }
 render(){
