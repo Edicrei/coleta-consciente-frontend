@@ -65,11 +65,11 @@ render(){
        {/* <Text style={styles.T4}>global.location1 </Text>*/}
 
 
-        <Text style={styles.T5}>global.street</Text>
+        <Text style={styles.T5}>{global.street}</Text>
       
 
       
-        <Text style={styles.T6}>global.complement</Text>
+        <Text style={styles.T6}>{global.complement}</Text>
 
        {/* <View style={styles.VSocial}>
         <Image style={styles.socialIcon} source={require('../assets/pilha.png')}/> 
@@ -115,7 +115,7 @@ render(){
       {/*<Image style={styles.Cimage} source={require('../assets/map.png')}/>*/}
        
 
-        <Text style={styles.T7}>Cadastrado em: 15/02/2021</Text>
+        <Text style={styles.T7}>Cadastrado em: {""}</Text>
   
     </View>
   );

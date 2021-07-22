@@ -113,7 +113,16 @@ getpoint = async () =>{
     
   
 
-  //console.log(global.token)
+
+  AsyncStorage.getItem('token').then(
+    (value) =>
+    
+    
+      global.token = value
+    
+  );
+
+   
 
   const headers = {
     'Authorization':'Bearer ' + global.token,
@@ -122,7 +131,7 @@ getpoint = async () =>{
    await axios.get(`http://134.209.115.59:38708/location`, {headers}) 
    .then(function (response) {
      
-   const data =  response.data.name;
+   const data =  response.data;
 
    
     
@@ -130,7 +139,7 @@ getpoint = async () =>{
 
       
    const  media = wholeArray;
-  console.log(media)
+  //console.log(media)
    for (var {id: n, address: p/*, longitude: q*/} of media) {
       
 
@@ -198,14 +207,14 @@ mapMarkers = () => {
                   global.latitude = report.coordinates.latitude ;
                   global.longitude =  report.coordinates.longitude;
                   global.location1 = report.location;
-                  global.street = 'Rua: ' + report.street +  ' Nº'  + ' ' +  report.number;
+                  global.street = report.street +  ' Nº'  + ' ' +  report.number;
                   global.complement = report.complement
               
                  navigation.navigate("Information")
                 }}
                 image={require('../assets/location.png')}
                 title={ report.complement }
-                description={'Rua: ' + report.street +  ' Nº'  + ' ' +  report.number}
+                description={report.street +  ' Nº'  + ' ' +  report.number}
                 style={{backgroundColor: 'red'}}
                 title={report.location}
                 description={report.comments}
